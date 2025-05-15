@@ -3,101 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="style.css">
     <title>Weather Forecast</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #00c6ff, #0072ff);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
-
-        label {
-            font-size: 1.2em;
-        }
-
-        .inp {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin: 10px 0;
-            width: 80%;
-            max-width: 300px;
-            font-size: 1em;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0072ff;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #005bb5;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            margin-top: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: fadeIn 0.5s forwards;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .error-message {
-            color: red;
-            margin-top: 10px;
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 0.8em;
-        }
-    </style>
 </head>
 <body>
     <h1 class="heading">Weather Forecast</h1>
@@ -109,19 +17,6 @@
         <div id="error-message" class="error-message"></div>
     </header>
     <div class="footer">Made By Yathart Singh</div>
-
-    <script>
-        const apiKey = 'NWoka6DbqLOhinx74/Nwhg==dNFCAWbiGdqqdZ3n'; // Store the API key
-
-        function getLatLong(cityName) {
-            const geocodingApiUrl = `https://api.api-ninjas.com/v1/geocoding?city=${encodeURIComponent(cityName)}`;
-            return $.ajax({
-                method: 'GET',
-                url: geocodingApiUrl,
-                headers: { 'X-Api-Key': apiKey },
-                contentType: 'application/json',
-            });
-        }
-
-        function getWeatherData(latitude, longitude) {
-            const weatherApiUrl = `https://api.api-ninjas.com/v1/weather?lat=${latitude}&lon=${longitude}`;
+<script src="script.js"></script>
+</body>
+</head>
